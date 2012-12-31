@@ -23,6 +23,10 @@ on early-init
     symlink /storage/sdcard0 /sdcard
 	
 	export EXTERNAL_STORAGE /storage/sdcard0
+	
+	# sd-ext
+    mkdir /sd-ext 0771 system system
+    export SD_EXT_DIRECTORY /sd-ext
 
 	
 	#############
@@ -31,8 +35,6 @@ on early-init
 on init
 
     # setup the global environment
-    export EXTERNAL_STORAGE /storage/sdcard0
-    export SD_EXT_DIRECTORY /sd-ext
     export DOWNLOAD_CACHE /cache/download
 
     # Add permissions for camera access
@@ -146,6 +148,9 @@ on early-boot
 #############
 on boot
 
+# Fix trace
+    mount debugfs /sys/kernel/debug /sys/kernel/debug
+
     # Increase the read ahead cache from 128KB to 2048KB (SD)	
     write /sys/devices/virtual/bdi/179:0/read_ahead_kb 2048
     #  Increase the read ahead cache from 4KB to 512KB (/data
@@ -206,6 +211,8 @@ on boot
     chown bluetooth bluetooth /sys/class/rfkill/rfkill0/state
     chown bluetooth bluetooth /sys/class/rfkill/rfkill0/type
     write /sys/class/rfkill/rfkill0/state 0
+    chown bluetooth bluetooth /sys/devices/platform/msm_serial_hs.0/clock
+	chmod 0660 /sys/devices/platform/msm_serial_hs.0/clock
 
     # allow interfaces to get IPv6 address when tethering is enabled
     write /proc/sys/net/ipv6/conf/rmnet0/accept_ra 2

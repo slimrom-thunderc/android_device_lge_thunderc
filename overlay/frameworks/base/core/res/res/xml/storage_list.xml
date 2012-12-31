@@ -38,7 +38,5 @@
              android:storageDescription="@string/storage_usb"
              android:removable="true"
              android:allowMassStorage="true"
-             android:emulated="false"
-             android:maxFileSize="4096"
              android:primary="true" />
 </StorageList>
