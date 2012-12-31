@@ -10,6 +10,8 @@ DEVICE_PACKAGE_OVERLAYS += device/lge/thunderc/overlay
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/thunderc_keypad.kl:system/usr/keylayout/thunderc_keypad.kl \
     $(LOCAL_PATH)/configs/thunderc_keypad.kcm.bin:system/usr/keychars/thunderc_keypad.kcm.bin \
+	$(LOCAL_PATH)/configs/thunderc_keypad.kl:system/usr/keylayout/thunder_keypad.kl \
+    $(LOCAL_PATH)/configs/thunderc_keypad.kcm.bin:system/usr/keychars/thunder_keypad.kcm.bin \
     $(LOCAL_PATH)/configs/wireless.ko:system/lib/modules/wireless.ko \
     $(LOCAL_PATH)/configs/librasdioif.ko:system/lib/modules/librasdioif.ko \
     $(LOCAL_PATH)/configs/touch_mcs6000.idc:system/usr/idc/touch_mcs6000.idc \
