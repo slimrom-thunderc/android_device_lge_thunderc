@@ -35,6 +35,9 @@ PRODUCT_COPY_FILES += packages/wallpapers/LivePicker/android.software.live_wallp
 PRODUCT_PACKAGES += \
     LiveWallpapers \
     LiveWallpapersPicker \
+	Apollo \
+	DSPManager \
+	VoiceDialer \
     VisualizationWallpapers \
     librs_jni
 

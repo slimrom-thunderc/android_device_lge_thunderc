@@ -39,7 +39,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/media_profiles.xml:system/etc/media_profiles.xml \
 	$(LOCAL_PATH)/configs/media_codecs.xml:system/etc/media_codecs.xml \
     $(LOCAL_PATH)/configs/nvram.txt:system/etc/wl/nvram.txt \
-    $(LOCAL_PATH)/configs/vold.fstab:system/etc/vold.fstab \
+	$(LOCAL_PATH)/configs/vold.fstab:system/etc/vold.fstab \
+	$(LOCAL_PATH)/configs/40a2sd:system/etc/init.d/40a2sd \
+	$(LOCAL_PATH)/configs/05mountsd:system/etc/init.d/05mountsd \
+    $(LOCAL_PATH)/configs/999youtube:system/etc/init.d/999youtube \
     $(LOCAL_PATH)/configs/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf
 
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -71,7 +74,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 PRODUCT_PROPERTY_OVERRIDES += \
     media.stagefright.enable-player=true \
-    media.stagefright.enable-meta=false \
+    media.stagefright.enable-meta=true \
     media.stagefright.enable-scan=false \
     media.stagefright.enable-http=true \
     media.stagefright.enable-aac=true \

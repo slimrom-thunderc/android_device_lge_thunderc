@@ -115,28 +115,39 @@ BOARD_SDEXT_DEVICE := /dev/block/vold/179:2
 BOARD_USE_LEGACY_TOUCHSCREEN := true
 
 # Wi-Fi & Wi-Fi HotSpot
-#WPA_SUPPLICANT_VERSION          := VER_0_6_X
+WPA_SUPPLICANT_VERSION          := VER_0_6_X
+BOARD_WLAN_DEVICE               := bcm4325
+BOARD_WEXT_NO_COMBO_SCAN        := true
+BOARD_WPA_SUPPLICANT_DRIVER     := WEXT
+WIFI_DRIVER_HAS_LGE_SOFTAP      := true
+WIFI_DRIVER_MODULE_PATH         := "/system/lib/modules/wireless.ko"
+WIFI_DRIVER_MODULE_ARG          := "firmware_path=/etc/wl/rtecdc.bin nvram_path=/etc/wl/nvram.txt config_path=/data/misc/wifi/config"
+WIFI_DRIVER_MODULE_NAME         := "wireless"
+WIFI_DRIVER_FW_PATH_STA         := "/system/etc/wl/rtecdc.bin"
+WIFI_DRIVER_FW_PATH_AP          := "/system/etc/wl/rtecdc-apsta.bin"
+
+#WPA_SUPPLICANT_VERSION           := VER_0_8_X
+#BOARD_WLAN_DEVICE                := bcmdhd
+#BOARD_WPA_SUPPLICANT_DRIVER      := WEXT
+#BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_dhd
+#WIFI_DRIVER_MODULE_PATH          := "/system/lib/modules/wireless.ko"
+#WIFI_DRIVER_FW_PATH_STA          := "/system/etc/wl/rtecdc.bin"
+#WIFI_DRIVER_FW_PATH_AP           := "/system/etc/wl/rtecdc-apsta.bin"
+#WIFI_DRIVER_MODULE_ARG           := "firmware_path=/etc/wl/rtecdc.bin nvram_path=/etc/wl/nvram.txt config_path=/data/misc/wifi/config"
+#WIFI_DRIVER_MODULE_NAME          := "wireless"
+#WIFI_DRIVER_LOADER_REUSE         := true
+
+#WPA_SUPPLICANT_VERSION          := VER_0_8_X
 #BOARD_WLAN_DEVICE               := bcm4325
 #BOARD_WEXT_NO_COMBO_SCAN        := true
 #BOARD_WPA_SUPPLICANT_DRIVER     := WEXT
-WIFI_DRIVER_HAS_LGE_SOFTAP      := true
+#WIFI_DRIVER_HAS_LGE_SOFTAP      := true
 #WIFI_DRIVER_MODULE_PATH         := "/system/lib/modules/wireless.ko"
 #WIFI_DRIVER_MODULE_ARG          := "firmware_path=/etc/wl/rtecdc.bin nvram_path=/etc/wl/nvram.txt config_path=/data/misc/wifi/config"
 #WIFI_DRIVER_MODULE_NAME         := "wireless"
 #WIFI_DRIVER_FW_PATH_STA         := "/system/etc/wl/rtecdc.bin"
 #WIFI_DRIVER_FW_PATH_AP          := "/system/etc/wl/rtecdc-apsta.bin"
-
-WPA_SUPPLICANT_VERSION := VER_0_8_X
-BOARD_WLAN_DEVICE := bcmdhd
-BOARD_WPA_SUPPLICANT_DRIVER := WEXT
-BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_bcmdhd
-WIFI_DRIVER_MODULE_PATH := "/system/lib/modules/wireless.ko"
-WIFI_DRIVER_FW_PATH_STA         := "/system/etc/wl/rtecdc.bin"
-WIFI_DRIVER_FW_PATH_AP          := "/system/etc/wl/rtecdc-apsta.bin"
-WIFI_DRIVER_MODULE_ARG := "firmware_path=/system/etc/rtecdc.bin,nvram_path=/system/etc/wl/nvram.txt iface_name=wlan"
-WIFI_DRIVER_MODULE_NAME := "wireless"
-WIFI_DRIVER_LOADER_REUSE := true
-
+#BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_bcmdhd 
 
 # OTA script
 #TARGET_RELEASETOOL_OTA_FROM_TARGET_SCRIPT := device/lge/thunderc/releasetools/ota_from_target_files
