@@ -44,7 +44,6 @@ struct str_map {
 };
 
 typedef enum {
-
     TARGET_MSM7625,
     TARGET_MSM7627,
     TARGET_QSD8250,
@@ -613,7 +612,6 @@ private:
     pthread_t mVideoThread;
     pthread_t mSnapshotThread;
 
-
     common_crop_t mCrop;
 
     bool mInitialized;
@@ -639,4 +637,3 @@ private:
 }; // namespace android
 
 #endif
-
